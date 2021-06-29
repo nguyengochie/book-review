@@ -1,13 +1,14 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import UnauthenRoute from "./Component/UnauthenRoute/UnauthenRoute";
+import Home from "./views/Home/Home";
 
 const Routes = () => {
   return (
     <Router>
       <Switch>
         <UnauthenRoute exact path="/">
-          <p>Home1</p>
+          <Home />
         </UnauthenRoute>
         <UnauthenRoute exact path="/list">
           <p>List</p>
