@@ -3,6 +3,7 @@ import { TabContext, TabPanel } from "@material-ui/lab";
 import { MainTabs } from '../constants';
 import { MainCtx } from '../../context/main/state';
 import Contact from "../Contact/Contact";
+import HomeContent from "../HomeContent/HomeContent";
 
 const HomeContainer = () => {
   const { currentTab }: any = useContext(MainCtx);
@@ -11,14 +12,14 @@ const HomeContainer = () => {
     <div>
       <TabContext value={currentTab}>
         <TabPanel value={MainTabs.HOME}>
-          <p>homecontent</p>
+          <HomeContent />
         </TabPanel>
 
         <TabPanel value={MainTabs.BOOKS_LIST} >
           <p>list books</p>
         </TabPanel>
 
-        <TabPanel value={MainTabs.CONTACT} >
+        <TabPanel value={MainTabs.ABOUT_US} >
           <Contact />
         </TabPanel>
       </TabContext>

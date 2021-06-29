@@ -31,9 +31,9 @@ const Header = () => {
           </Grid>
           <Grid item xs={4}>
             <Typography
-              onClick={() => setCurrentTab(MainTabs.CONTACT)}
-              className={clsx(classes.txtHeader, currentTab === MainTabs.CONTACT && classes.txtActive)}>
-              CONTACT</Typography>
+              onClick={() => setCurrentTab(MainTabs.ABOUT_US)}
+              className={clsx(classes.txtHeader, currentTab === MainTabs.ABOUT_US && classes.txtActive)}>
+              ABOUT US</Typography>
           </Grid>
         </Grid>
 
