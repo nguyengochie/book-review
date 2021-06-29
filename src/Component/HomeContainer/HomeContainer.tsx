@@ -4,14 +4,16 @@ import { MainTabs } from '../constants';
 import { MainCtx } from '../../context/main/state';
 import Contact from "../Contact/Contact";
 import HomeContent from "../HomeContent/HomeContent";
+import { useStyles } from './HomeContainer.style';
 
 const HomeContainer = () => {
   const { currentTab }: any = useContext(MainCtx);
+  const classes = useStyles();
 
   return (
     <div>
       <TabContext value={currentTab}>
-        <TabPanel value={MainTabs.HOME}>
+        <TabPanel className={classes.homeContentTab} value={MainTabs.HOME}>
           <HomeContent />
         </TabPanel>
 

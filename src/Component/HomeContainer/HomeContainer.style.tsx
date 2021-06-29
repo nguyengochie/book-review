@@ -5,6 +5,9 @@ export const useStyles = makeStyles(
     root: {
 
     },
+    homeContentTab: {
+      padding: "0px !important"
+    }
   }),
   { index: 1 }
 );
