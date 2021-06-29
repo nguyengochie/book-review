@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Typography, Grid } from '@material-ui/core';
 import { useStyles } from "./Header.style";
+import { MainCtx } from '../../context/main/state';
+import { MainTabs } from '../constants';
+import clsx from "clsx";
 
-const Header = (props: any) => {
+const Header = () => {
   const classes = useStyles();
+  const { setCurrentTab, currentTab }: any = useContext(MainCtx);
+
   return (
     <div className={classes.root}>
       <div className={classes.topHeader}>
@@ -13,13 +18,22 @@ const Header = (props: any) => {
       <div className={classes.botHeader}>
         <Grid container spacing={3}>
           <Grid item xs={4}>
-            <Typography className={classes.txtHeader} >HOME</Typography>
+            <Typography
+              onClick={() => setCurrentTab(MainTabs.HOME)}
+              className={clsx(classes.txtHeader, currentTab === MainTabs.HOME && classes.txtActive)}>
+              HOME</Typography>
           </Grid>
           <Grid item xs={4}>
-            <Typography className={classes.txtHeader} >BOOK LISTS</Typography>
+            <Typography
+              onClick={() => setCurrentTab(MainTabs.BOOKS_LIST)}
+              className={clsx(classes.txtHeader, currentTab === MainTabs.BOOKS_LIST && classes.txtActive)}>
+              BOOK LISTS</Typography>
           </Grid>
           <Grid item xs={4}>
-            <Typography className={classes.txtHeader} >CONTACT</Typography>
+            <Typography
+              onClick={() => setCurrentTab(MainTabs.CONTACT)}
+              className={clsx(classes.txtHeader, currentTab === MainTabs.CONTACT && classes.txtActive)}>
+              CONTACT</Typography>
           </Grid>
         </Grid>
 

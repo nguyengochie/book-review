@@ -35,6 +35,9 @@ export const useStyles = makeStyles(
         color: "#eaad6c",
       },
       cursor: "pointer"
+    },
+    txtActive: {
+      color: "#eaad6c",
     }
   }),
   { index: 1 }
